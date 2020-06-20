@@ -1,7 +1,6 @@
 void setup() {
   // Debug console
   Serial.begin(9600);
-
   delay(10);
 
   // Set ESP8266 baud rate
@@ -9,7 +8,4 @@ void setup() {
   delay(10);
 
   Blynk.begin(auth, wifi, ssid, pass);
-
-  // Setup a function to be called every second
-  timer.setInterval(1000L, myTimerEvent);
 }
