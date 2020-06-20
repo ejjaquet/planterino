@@ -1,15 +1,13 @@
 void setup() {
   // Debug console
   Serial.begin(9600);
+  delay(1000);
 
-  delay(10);
-
-  // Set ESP8266 baud rate
+  // initialize serial for ESP module
   EspSerial.begin(ESP8266_BAUD);
-  delay(10);
+  Serial.println("Start Blynk_WM using ESP_AT_Shield on " + String(BOARD_TYPE));
+  delay(1000);
 
-  Blynk.begin(auth, wifi, ssid, pass);
-
-  // Setup a function to be called every second
-  timer.setInterval(1000L, myTimerEvent);
+  Blynk.setConfigPortal("Planterino", "MyPlanterino");
+  Blynk.begin(wifi);
 }
