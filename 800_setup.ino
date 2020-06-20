@@ -8,4 +8,6 @@ void setup() {
   delay(10);
 
   Blynk.begin(auth, wifi, ssid, pass);
+
+  setupWaterPump();
 }
