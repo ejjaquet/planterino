@@ -32,3 +32,7 @@ Dip switch settins for Arduino Mega + Wifi:
 // CO2 Sensor (SGP-30)
 #include <Wire.h>
 #include "Adafruit_SGP30.h"
+
+// DHT 22 Sensor (temperature + Humidity)
+#include "DHT.h"
+#include <DHT_U.h>

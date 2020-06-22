@@ -7,7 +7,10 @@ void loop() {
 
   // check the waterlevel and send an iOS alert when too low
   checkWaterLevel();
-  
+
+  // Read temperature and humidity and turn on humidifier
+  readTemp();
+
   // Calculate CO2 and turn on fans
   readSGP30();
 

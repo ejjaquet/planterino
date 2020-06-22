@@ -44,8 +44,12 @@ void readSGP30() {
     Serial.println("Measurement failed");
     return;
   }
-  Serial.print("TVOC "); Serial.print(sgp.TVOC); Serial.print(" ppb\t");
-  Serial.print("eCO2 "); Serial.print(sgp.eCO2); Serial.println(" ppm");
+  Serial.print("TVOC: "); 
+  Serial.print(sgp.TVOC); 
+  Serial.println(" ppb\t");
+  Serial.print("eCO2: "); 
+  Serial.print(sgp.eCO2); 
+  Serial.println(" ppm");
  
   delay(1000);
 

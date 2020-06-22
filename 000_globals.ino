@@ -15,3 +15,10 @@
 
 // Fan
 #define FAN1PIN 6
+
+// DHT 22 sensor
+#define DHTPIN 26
+#define DHTTYPE DHT22
+
+// Humidifier / Water Atomizer
+#define ATOMPIN 18
