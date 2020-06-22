@@ -12,3 +12,6 @@
 
 // Water level sensor
 #define WATERLEVELPIN A7
+
+// Fan
+#define FAN1PIN 6

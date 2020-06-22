@@ -7,6 +7,11 @@ void loop() {
 
   // check the waterlevel and send an iOS alert when too low
   checkWaterLevel();
+  
+  // Calculate CO2 and turn on fans
+  readSGP30();
+
+  Serial.println("=====================================");
 
   // Pause for five seconds
   delay(5000);

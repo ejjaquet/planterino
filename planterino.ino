@@ -28,3 +28,7 @@ Dip switch settins for Arduino Mega + Wifi:
 // Libraries used
 #include <ESP8266_Lib.h>
 #include <BlynkSimpleShieldEsp8266.h>
+
+// CO2 Sensor (SGP-30)
+#include <Wire.h>
+#include "Adafruit_SGP30.h"
