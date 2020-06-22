@@ -21,7 +21,7 @@
 #define DHTTYPE DHT22
 
 // Humidifier / Water Atomizer
-#define ATOMPIN 18
+#define ATOMPIN 23
 
 // 12v relay for growth light
 #define RELAYPIN 25
