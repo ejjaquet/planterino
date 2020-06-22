@@ -9,3 +9,6 @@
 
 // Water Pump (actuator)
 #define WATERPIN 14
+
+// Water level sensor
+#define WATERLEVELPIN A7
