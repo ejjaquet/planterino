@@ -16,7 +16,9 @@ void setup() {
   Serial.println("Setting up sensors and actuators");
   setupWaterPump();
   setupFan();
+  setupRelay();
   setupHumidifier();
+  setupRTC();
   setupDHT22();
   setupSGP30();
 

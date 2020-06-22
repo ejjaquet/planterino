@@ -3,7 +3,7 @@ DHT dht(DHTPIN, DHTTYPE, 15);
 float h;                      // value for humidity reading
 float t;                      // value for temperature reading
 float hic;                    // value for calculated heat index
-int   humidityThreshold = 5; // value when to turn on humidifier
+int   humidityThreshold = 50; // value when to turn on humidifier
 
 
 void setupDHT22() {

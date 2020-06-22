@@ -22,3 +22,6 @@
 
 // Humidifier / Water Atomizer
 #define ATOMPIN 18
+
+// 12v relay for growth light
+#define RELAYPIN 25

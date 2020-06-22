@@ -14,6 +14,9 @@ void loop() {
   // Calculate CO2 and turn on fans
   readSGP30();
 
+  // Check the time and turn lights on or off
+  checkTime();
+
   Serial.println("=====================================");
 
   // Pause for five seconds

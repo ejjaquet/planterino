@@ -5,10 +5,16 @@
  * Date: 19-06-2020
  * 
  * Components used
- * - Arduino Mega
+ * - Arduino Mega + WiFi
  * - DHT22 Temperature sensor
  * - SGP30 Air Quality sensor
- * - ...
+ * - Capacitive Soil Moisture sensor
+ * - Realtime Clock
+ * - Waterlevel sensor
+ * - 5v waterpump
+ * - 5v fan
+ * - Grove Water Atomizer (Reichelt)
+ * - 12v Relay
  **************/
 
 /*
@@ -26,6 +32,8 @@ Dip switch settins for Arduino Mega + Wifi:
 #include "credentials.h"
 
 // Libraries used
+
+// Blynk + WiFi
 #include <ESP8266_Lib.h>
 #include <BlynkSimpleShieldEsp8266.h>
 
@@ -36,3 +44,6 @@ Dip switch settins for Arduino Mega + Wifi:
 // DHT 22 Sensor (temperature + Humidity)
 #include "DHT.h"
 #include <DHT_U.h>
+
+// Realtime Clock
+#include <RTClib.h>
