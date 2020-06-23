@@ -32,18 +32,12 @@ void checkTime() {
   Serial.print(now.minute());
   Serial.println("m");
 
-  if(now.hour() == hourThresholdOn && now.minute() == minuteThresholdOn)
-    {
-       terminal.println("The LEDs are on.");
-       // turn the relay on
-       digitalWrite(RELAYPIN, HIGH);
-    }
+  if(now.hour() == hourThresholdOn && now.minute() == minuteThresholdOn) {
+    startRelay();  
+  }
 
-    if(now.hour() == hourThresholdOff && now.minute() == minuteThresholdOff)
-    {
-       terminal.println("The LEDs are off.");
-       // turn the relay off
-       digitalWrite(RELAYPIN, LOW);
-    }
+  if(now.hour() == hourThresholdOff && now.minute() == minuteThresholdOff) {
+    stopRelay();
+  }
     
 }

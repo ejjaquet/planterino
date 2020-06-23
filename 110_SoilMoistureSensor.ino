@@ -22,6 +22,6 @@ void readMoisture() {
   Blynk.virtualWrite(VPIN_MOISTURE, moistureValue);
   
   if(moistureValue <= 500) {
-    waterPlants();
+    activateWaterPump();
   }
 }

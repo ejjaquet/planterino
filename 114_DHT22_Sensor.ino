@@ -36,7 +36,7 @@ void readTemp() {
   hic = dht.computeHeatIndex(t, h, false);
 
   if(hic < humidityThreshold) {
-    humidify();
+    activateHumidifier();
   }
 
   // write the value to Blynk

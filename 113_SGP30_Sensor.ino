@@ -10,11 +10,6 @@ Adafruit_SGP30 sgp;
 int sgp30Counter = 0;
 int co2Threshold = 800;
 
-void setupFan() {
-  pinMode(FAN1PIN, OUTPUT);
-  digitalWrite(FAN1PIN, LOW);
-}
-
 void setupSGP30() {
   if (! sgp.begin()){
     Serial.println("SGP Sensor not found :(");
@@ -79,10 +74,6 @@ void readSGP30() {
   Blynk.virtualWrite(VPIN_CO2, sgp.eCO2);
 
   if(sgp.eCO2 < co2Threshold) {
-    terminal.println("The fan has started.");
-    digitalWrite(FAN1PIN, HIGH);
-    delay(10000);
-    terminal.println("The fan has stopped.");
-    digitalWrite(FAN1PIN, LOW);
+    activateFan();
   }
 }
