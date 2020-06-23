@@ -1,11 +1,9 @@
-/*
+/***************************************************
  * Capacitive Soil Moisture Sensor 
  * Pinout: VCC, GND and A6
  * 
  * Measures the amount of moisture in soil in order to activate the pump
- * 
- */
-
+ **************************************************/
  
 float moistureValue = 0; 
 
@@ -21,7 +19,7 @@ void readMoisture() {
   Serial.println(moistureValue);
   
   // write the value to Blynk
-  Blynk.virtualWrite(V1, moistureValue);
+  Blynk.virtualWrite(VPIN_MOISTURE, moistureValue);
   
   if(moistureValue <= 500) {
     waterPlants();

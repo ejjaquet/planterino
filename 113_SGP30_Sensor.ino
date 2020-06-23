@@ -1,3 +1,10 @@
+/***************************************************
+ * SGP30 Air quality Sensor 
+ * Pinout: SCL, SDA, VCC and Ground
+ * 
+ * Measures the air quality for co2 and triggers the fan
+ **************************************************/
+
 Adafruit_SGP30 sgp;
 
 int sgp30Counter = 0;
@@ -42,6 +49,8 @@ void readSGP30() {
 
   if (! sgp.IAQmeasure()) {
     Serial.println("Measurement failed");
+    terminal.print(getFormattedDate());
+    terminal.println("Co2 Measurement failed!");
     return;
   }
   Serial.print("TVOC: "); 
@@ -66,9 +75,14 @@ void readSGP30() {
     Serial.print(" & TVOC: 0x"); Serial.println(TVOC_base, HEX);
   }
 
+  // write the value to Blynk
+  Blynk.virtualWrite(VPIN_CO2, sgp.eCO2);
+
   if(sgp.eCO2 < co2Threshold) {
+    terminal.println("The fan has started.");
     digitalWrite(FAN1PIN, HIGH);
     delay(10000);
+    terminal.println("The fan has stopped.");
     digitalWrite(FAN1PIN, LOW);
   }
 }

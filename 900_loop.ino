@@ -1,3 +1,8 @@
+/***************************************************
+ * The actual execution of the code, 
+ * pauses for 5 seconds and continues
+ **************************************************/
+ 
 void loop() {
   // Initiate Blynk
   Blynk.run();

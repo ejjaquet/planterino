@@ -1,3 +1,7 @@
+/***************************************************
+ * Setup routine 
+ **************************************************/
+
 void setup() {
   // Debug console
   Serial.begin(9600);
@@ -21,6 +25,10 @@ void setup() {
   setupRTC();
   setupDHT22();
   setupSGP30();
+
+  terminal.clear();
+  terminal.print(getFormattedDate());
+  terminal.println(F("Planterino started with Blynk v" BLYNK_VERSION));
 
   Serial.println("Setup is done. Initiating the loop...");
   Serial.println("=====================================");

@@ -1,3 +1,7 @@
+/***************************************************
+ *        Global settings and pin definitions
+ **************************************************/
+
 // Hardware Serial on Mega, Leonardo, Micro...
 #define EspSerial Serial3
 
@@ -8,7 +12,7 @@
 #define MOISTUREPIN A6
 
 // Water Pump (actuator)
-#define WATERPIN 14
+#define WATERPIN 34
 
 // Water level sensor
 #define WATERLEVELPIN A7

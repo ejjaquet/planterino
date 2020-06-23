@@ -1,3 +1,10 @@
+/***************************************************
+ * DHT22 Temperature sensors 
+ * Pinout: VCC, GND and D26
+ * 
+ * Measures temp and humidity and triggers humidifier
+ **************************************************/
+
 DHT dht(DHTPIN, DHTTYPE, 15);
 
 float h;                      // value for humidity reading
@@ -19,6 +26,8 @@ void readTemp() {
 
   // Check if any reads failed and exit early (to try again).
   if (isnan(h) || isnan(t)) {
+    terminal.print(getFormattedDate());
+    terminal.println("Failed to read from DHT sensor!");
     Serial.println(F("Failed to read from DHT sensor!"));
     return;
   }
@@ -29,6 +38,10 @@ void readTemp() {
   if(hic < humidityThreshold) {
     humidify();
   }
+
+  // write the value to Blynk
+  Blynk.virtualWrite(VPIN_TEMP, t);
+  Blynk.virtualWrite(VPIN_HUMIDITY, h);
 
   Serial.print(F("Humidity: "));
   Serial.print(h);
