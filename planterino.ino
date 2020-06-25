@@ -50,3 +50,61 @@
 
 // Chrono library for multitasking
 #include  <Chrono.h>
+
+// EEPROM for saving configuration
+#include <EEPROM.h>
+
+/***************************************************
+ *        Blynk code for updating settings.
+ *        For some reason this needs to be
+ *        in the main file, otherwise compilation
+ *        will fail.
+ **************************************************/
+
+// Settings used
+int addrHumidityThreshold = 0;
+float humidityThreshold;
+
+int addrCo2Threshold = 10;
+float co2Threshold;
+
+int addrSoilMoistureThreshold = 20;
+float soilmoistureThreshold;
+
+BLYNK_WRITE(V20) {
+  int pinValue = param.asInt();
+  humidityThreshold = (float)pinValue;
+  
+  EEPROM.put(addrHumidityThreshold, humidityThreshold);
+  Serial.println("Saving...");
+  humidityThreshold = 0;
+  EEPROM.get(addrHumidityThreshold, humidityThreshold);
+  Serial.println(humidityThreshold);
+}
+
+BLYNK_WRITE(V21) {
+  int pinValue = param.asInt();
+  co2Threshold = (float)pinValue;
+  
+  EEPROM.put(addrCo2Threshold, co2Threshold);
+  Serial.println("Saving...");
+  co2Threshold = 0;
+  EEPROM.get(addrCo2Threshold, co2Threshold);
+  Serial.println(co2Threshold);
+}
+
+BLYNK_WRITE(V22) {
+  int pinValue = param.asInt();
+  soilmoistureThreshold = (float)pinValue;
+  
+  EEPROM.put(addrSoilMoistureThreshold, soilmoistureThreshold);
+  Serial.println("Saving...");
+  soilmoistureThreshold = 0;
+  EEPROM.get(addrSoilMoistureThreshold, soilmoistureThreshold);
+  Serial.println(soilmoistureThreshold);
+}
+
+BLYNK_WRITE(V23) {
+  int pinValue = param.asInt();
+  digitalWrite(25, pinValue);
+}

@@ -8,7 +8,6 @@
 Adafruit_SGP30 sgp;
 
 int sgp30Counter = 0;
-int co2Threshold = 800;
 
 void setupSGP30() {
   if (! sgp.begin()){
