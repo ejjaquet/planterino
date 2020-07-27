@@ -7,10 +7,6 @@
 
 DHT dht(DHTPIN, DHTTYPE, 15);
 
-float h;                      // value for humidity reading
-float t;                      // value for temperature reading
-float hic;                    // value for calculated heat index
-
 void setupDHT22() {
   dht.begin();
 }

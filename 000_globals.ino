@@ -17,8 +17,9 @@
 // Water level sensor
 #define WATERLEVELPIN A7
 
-// Fan
+// Fans
 #define FAN1PIN 6
+#define FAN2PIN 7
 
 // DHT 22 sensor
 #define DHTPIN 26
@@ -29,3 +30,8 @@
 
 // 12v relay for growth light
 #define RELAYPIN 25
+
+// temperature values used across modules
+float h;    // value for humidity reading
+float t;    // value for temperature reading
+float hic;  // value for calculated heat index
