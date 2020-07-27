@@ -5,7 +5,7 @@ Planterino is a indoor greenhouse, controlled by a set of Arduino sensors and ac
 ## Microcontroller
 
 For the heart of the project a **Arduino Mega + WiFi** is used. Basically an Arduino Mega 2560 with a build-in ESP8266 WiFi chip. 
-With the onboard jumpersettings you can controll the workings of the moard:
+With the onboard jumpersettings you can controll the workings of the board:
 
 Dip switch settins for Arduino Mega + Wifi:
 
@@ -19,19 +19,24 @@ Dip switch settins for Arduino Mega + Wifi:
 
 We use the following set of sensors to control the environment of the Planterino Greenhouse and to send the data to Blynk.
 
- - Capacitive Soil Moisture Sensor
- - Work in Progress
+ - Capacitive Soil Moisture sensor
+ - DHT22 Temperature sensor
+ - SGP30 Air Quality sensor
+ - Waterlevel sensor
 
 ## Actuators
 
 We use the following set of actuator to influence the environment in the Planterino Greenhouse:
 
- - Water pump
- - Work in progress
+ - 5v waterpump
+ - 5v fan (2x)
+ - Grove Water Atomizer (Reichelt)
+ - 12v Relay
+ - Realtime Clock module
 
 ## Blynk
 The data of the greenhouse is sent to Blynk.
-More info to be added later.
+With Blynk an app is created where you can read all data, turn on the light, pump, humidifier and fans, and control the treshhold settings.
 
 ## The greenhouse
 The actual housing was copied from an idea found on YouTube:
