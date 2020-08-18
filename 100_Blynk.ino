@@ -11,6 +11,19 @@
 #define VPIN_TERMINAL     V10
 
 ESP8266 wifi(&EspSerial);
+WidgetRTC rtc;
 
 // Attach virtual serial terminal to vpin setting
 WidgetTerminal terminal(VPIN_TERMINAL);
+
+BLYNK_CONNECTED() {
+  // Synchronize time on connection
+  rtc.begin();
+}
+
+String getFormattedDate() {
+  String currentTime = String(hour()) + ":" + minute();
+  String currentDate = String(day()) + "-" + month() + "-" + year();
+  
+  return currentDate + " " + currentTime + ":";
+}

@@ -36,6 +36,9 @@
 // Blynk + WiFi
 #include <ESP8266_Lib.h>
 #include <BlynkSimpleShieldEsp8266.h>
+// Blynk RTC module
+#include <TimeLib.h>
+#include <WidgetRTC.h>
 
 // CO2 Sensor (SGP-30)
 #include <Wire.h>

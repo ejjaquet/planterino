@@ -16,18 +16,18 @@ void setup() {
 
   Serial.println("Setup Wifi connection with Blynk server");
   Blynk.begin(auth, wifi, ssid, pass);
+  setSyncInterval(10 * 60); // Sync interval in seconds (10 minutes)
 
   Serial.println("Setting up sensors and actuators");
+  setupEEProm();
   setupWaterPump();
   setupFan();
   setupRelay();
   setupHumidifier();
-  setupRTC();
   setupDHT22();
   setupSGP30();
 
   terminal.clear();
-  terminal.print(getFormattedDate());
   terminal.println(F("Planterino started with Blynk v" BLYNK_VERSION));
 
   Serial.println("Setup is done. Initiating the loop...");

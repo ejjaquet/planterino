@@ -12,8 +12,6 @@ int fanState = LOW;
 void setupFan() {
   pinMode(FAN1PIN, OUTPUT);
   digitalWrite(FAN1PIN, LOW);
-  pinMode(FAN2PIN, OUTPUT);
-  digitalWrite(FAN2PIN, LOW);
 }
 
 void activateFan() {
@@ -30,6 +28,5 @@ void activateFan() {
     };
     // write the state to the pin
     digitalWrite(FAN1PIN,fanState);
-    digitalWrite(FAN2PIN,fanState);
   }
 }

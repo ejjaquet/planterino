@@ -2,6 +2,11 @@
  * SGP30 Air quality Sensor 
  * Pinout: SCL, SDA, VCC and Ground
  * 
+ * vin black
+ * gnd white
+ * scl grey
+ * sda purple
+ * 
  * Measures the air quality for co2 and triggers the fan
  **************************************************/
 
@@ -71,7 +76,7 @@ void readSGP30() {
   // write the value to Blynk
   Blynk.virtualWrite(VPIN_CO2, sgp.eCO2);
 
-  if(sgp.eCO2 < co2Threshold) {
+  if(sgp.eCO2 > co2Threshold) {
     activateFan();
   }
 }

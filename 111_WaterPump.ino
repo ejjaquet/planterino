@@ -7,24 +7,24 @@
 
 // Instanciate a Chrono object.
 Chrono waterpumpChrono; 
-int waterpumpState = LOW;
+int waterpumpState = HIGH;
 
 void setupWaterPump() {
   pinMode(WATERPIN, OUTPUT);
-  digitalWrite(WATERPIN, LOW);
+  digitalWrite(WATERPIN, HIGH);
 }
 
 void activateWaterPump() {
   if(waterpumpChrono.hasPassed(3000) ) { 
     waterpumpChrono.restart();
-    if (waterpumpState==HIGH) {
+    if (waterpumpState==LOW) {
       terminal.print(getFormattedDate());
       terminal.println("The pump has stopped.");
-      waterpumpState=LOW;
+      waterpumpState=HIGH;
     } else { 
       terminal.print(getFormattedDate());
       terminal.println(F("The pump has started."));
-      waterpumpState=HIGH;
+      waterpumpState=LOW;
     };
     // write the state to the pin
     digitalWrite(WATERPIN,waterpumpState);

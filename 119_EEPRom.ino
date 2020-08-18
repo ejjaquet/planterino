@@ -6,7 +6,9 @@
 
 void setupEEProm() {
 
-  EEPROM.get(addrSoilMoistureThreshold,soilmoistureThreshold);  //Get the upper moisture threshold
+  EEPROM.get(addrSoilMoistureThreshold,soilmoistureThreshold);
+  EEPROM.get(addrHumidityThreshold,humidityThreshold);
+  EEPROM.get(addrCo2Threshold, co2Threshold);
 
   Blynk.syncAll();
 }

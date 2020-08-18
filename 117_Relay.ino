@@ -7,19 +7,19 @@
 
 void setupRelay() {
   pinMode(RELAYPIN, OUTPUT);
-  digitalWrite(RELAYPIN, LOW);
+  digitalWrite(RELAYPIN, HIGH);
 }
 
 void startRelay() {
   terminal.print(getFormattedDate());
   terminal.println("The LEDs are on.");
   // turn the relay on
-  digitalWrite(RELAYPIN, HIGH);
+  digitalWrite(RELAYPIN, LOW);
 }
 
 void stopRelay() {
   terminal.print(getFormattedDate());
   terminal.println("The LEDs are off.");
   // turn the relay off
-  digitalWrite(RELAYPIN, LOW);
+  digitalWrite(RELAYPIN, HIGH);
 }
